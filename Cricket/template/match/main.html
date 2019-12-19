@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Match Page{% endblock %}
+
+{% block content %}
+    {% if matches %}
+        <div class="table-responsive" style="margin-top:2rem;">
+            <table class="table table-hover">
+                <caption>Match Details</caption>
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Team 1</td>
+                        <td>Team 2</td>
+                        <td>Winner</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for match in matches %}
+                        <tr>
+                            <td>{{ match.date|date:"d M, Y" }}</td>
+                            <td>{{ match.team1.name }}</td>
+                            <td>{{ match.team2.name }}</td>
+                            <td>{{ match.winner.name }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+    <div>
+        <p><strong>Team List :</strong></p>
+        {% for team in teams %}
+            <div style="padding-bottom:0.5rem;">
+                <img class="img-fluid" src="{{ team.logoURI.url }}" alt="{{ team.name }}'s Image" style="height:4rem; width:4rem;object-fit:
+                cover;">
+                <a href="{% url 'match:team_details' team_id=team.pk %}">{{ team.name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

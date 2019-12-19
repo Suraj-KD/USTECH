@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Players Detail{% endblock %}
+
+{% block content %}
+    <div style="padding-top:2rem; padding-bottom:1rem;">
+        <img src="{{ team.logoURI.url }}" alt="{{ team.name }}'s Image" style="height:4rem; width:4rem;object-fit:
+            cover;">
+        {{ team.name }}
+    </div>
+    <p><strong>Players List :</strong></p>
+    <div style="padding-bottom:0.5rem;">
+        {% if players %}
+            {% for player in players %}
+                <img src="{{ player.image.url }}" alt="{{ player.fname }}'s Image" style="height:4rem; width:4rem;object-fit:
+                    cover;">
+                {{ player.get_full_name }}
+            {% endfor %}
+        {% else %}
+            No Players in the team.
+        {% endif %}
+    </div>
+{% endblock %}

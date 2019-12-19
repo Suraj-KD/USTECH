@@ -1,0 +1,34 @@
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as language_code %}
+
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="An App for showing Cricket Stats">
+    <meta name="author" content="Suraj Dubey">
+
+    <title> {% block title %} Home Page {% endblock %} </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid mt-3">
+
+        {% block content %}
+            No content.
+        {% endblock %}
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
