@@ -2,7 +2,7 @@ backports.functools-lru-cache==1.6.1
 backports.shutil-get-terminal-size==1.0.0
 beautifulsoup4==4.8.1
 decorator==4.4.1
-Django==1.11.27
+Django==1.11.28
 django-bootstrap==0.2.4
 django-bootstrap4==1.1.1
 enum34==1.1.6
