@@ -6,7 +6,7 @@ Django==1.11.27
 django-bootstrap==0.2.4
 django-bootstrap4==1.1.1
 enum34==1.1.6
-ipython==5.8.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 pathlib2==2.3.5
 pexpect==4.7.0
